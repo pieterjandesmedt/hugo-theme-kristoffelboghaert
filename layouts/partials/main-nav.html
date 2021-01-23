@@ -1,4 +1,4 @@
-<div class="columns">
+<div class="columns is-hidden-touch mb-0">
 	<div class="column">
 		<h1 class="is-size-1">
 			<a class="has-text-dark has-text-weight-semibold" href="/">
@@ -11,6 +11,14 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
+		<div class="navbar-start is-hidden-desktop">
+			<h1 class="is-size-3 navbar-item">
+				<a class="has-text-dark has-text-weight-semibold" href="/">
+					{{ .Site.Params.brand }}
+				</a>
+			</h1>
+		</div>
+
 		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
@@ -19,13 +27,13 @@
 	</div>
 
 	<div class="navbar-menu" id="navbar">
-		<div class="is-flex is-justify-content-space-between is-flex-grow-1 is-size-4">
+		<div class="is-flex-desktop is-justify-content-space-between is-flex-grow-1 is-size-4">
 			{{ partial "navigation" . }}
 		</div>
 	</div>
 
 </nav>
-<hr class="has-background-dark" />
+<hr class="has-background-dark mt-2" />
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
