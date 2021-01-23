@@ -1,0 +1,24 @@
+{{ partial "head" . }}
+
+<body>
+	<div class="container">
+		{{ partial "main-nav" . }}
+		<div class="mt-3 columns">
+			<div class="column is-4">
+				<!-- <h2 class="is-size-2">{{ .Title }}</h2> -->
+				{{ with .Title }}<h2 class="is-size-4 mb-3">{{ . }}</h2>{{ end }}
+			</div>
+			<div class="column">
+				{{ with .Content }}
+				<div class="content">
+					{{ . }}
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+
+	{{ partial "footer" . }}
+</body>
+
+</html>

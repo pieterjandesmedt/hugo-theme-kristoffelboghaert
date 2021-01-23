@@ -1,0 +1,14 @@
+name: akb
+license: proprietary
+description: A portfolio/blog website built for kristoffelboghaert.be
+tags:
+- portfolio
+- company
+- contact form
+- google analytics
+- blog
+features:
+- blog
+- portfolio
+- contact form
+min_version: 0.79

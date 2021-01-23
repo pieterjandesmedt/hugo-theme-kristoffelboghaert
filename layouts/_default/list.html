@@ -1,0 +1,26 @@
+{{ partial "head" . }}
+
+<body>
+	<div class="container">
+		{{ partial "main-nav" . }}
+		<div class="columns mt-3">
+			<div class="column">
+				<div class="columns is-multiline">
+					{{ range .Paginator.Pages }}
+					<div class="column is-4">
+						<a href="{{.Permalink}}" title="{{.Title}}">
+							{{ with .Params.images }}
+							{{ partial "micro/image" (dict "filename" (index . 0)) }}
+							{{ end }}
+						</a>
+					</div>
+					{{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{ partial "footer" . }}
+</body>
+
+</html>
