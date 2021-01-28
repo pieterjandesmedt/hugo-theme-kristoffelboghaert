@@ -1,10 +1,20 @@
-+++
-date = "2015-07-15T22:17:00+02:00"
-draft = false
-title = ""
+---
+title: {{ .Name | replaceRE "[_-]" " "  | replaceRE "^[0-9]+" "" | title }}
+date: {{ .Date }}
+author: Kristoffel Boghaert
+category: design stories
+description:
+banner: image0.jpg
+images:
+- image1.jpg
+- image2.jpg
+tags:
+- tag1
+- tag2
+---
 
-[menu.main]
-Name = ""
-parent = ""
-+++
+Summary or first few lines of the article goes here.
 
+<!--more-->
+
+Here comes the rest of the article.
