@@ -29,14 +29,13 @@
 							{{ end }}
 						</div>
 						{{ if (gt (len .Params.images) 1) }}
-						<div class="buttons has-addons mt-3">
-							<button class="button prev">&laquo;</button>
-							{{ if (gt (len .Params.images) 2) }}
-							{{ range $index, $element := .Params.images }}
-							<button class="button slide-{{ $index }}">{{ add $index 1 }}</button>
-							{{ end }}
-							{{ end }}
-							<button class="button next">&raquo;</button>
+						<div class="buttons has-addons">
+							<button class="button is-shadowless is-flex-grow-1 prev">
+								<span>&lsaquo;</span>
+							</button>
+							<button class="button is-shadowless is-flex-grow-1 next">
+								<span>&rsaquo;</span>
+							</button>
 						</div>
 						{{ end }}
 					</div>
@@ -52,13 +51,6 @@
 		const mySiema = new Siema();
 		document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
 		document.querySelector('.next').addEventListener('click', () => mySiema.next());
-		{{ with .Params.images }}
-		{{ if (gt (len .) 2) }}
-			{{ range $index, $element := . }}
-			document.querySelector('.slide-{{ $index }}').addEventListener('click', () => mySiema.goTo({{ $index }}));
-			{{ end }}
-		{{ end }}
-		{{ end }}
 	</script>
 </body>
 
