@@ -1,6 +1,6 @@
 {{ $currentNode := . }}
 {{ range where .Site.Menus.main "Menu" "main" }}
-    <a href="{{.URL | relURL }}" class="navbar-item is-lowercase {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}is-active{{end}}">{{.Name}}</a>
+    <a href="{{.URL | relURL }}" class="navbar-item is-align-items-flex-start {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}is-active{{end}}">{{.Name | safeHTML }}</a>
         {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
         {{ $.Scratch.Set "CurrentMenu" . }}
         {{ $.Scratch.Add "Breadcrumbs" (print " > <a href='" .URL  "'>" .Name "</a>" )  }}
