@@ -7,10 +7,16 @@
 			<div class="column">
 				<div class="columns is-multiline">
 					{{ range .Paginator.Pages }}
-					<div class="column is-4">
+					<div class="column is-half-tablet is-one-third-widescreen is-one-quarter-fullhd">
 						<a href="{{.Permalink}}" title="{{.Title}}">
-							{{ with .Params.images }}
-							{{ partial "micro/image" (dict "filename" (index . 0)) }}
+							{{ if isset .Params "banner" }}
+								{{ with .Params.banner }}
+								{{ partial "micro/image" (dict "filename" .) }}
+								{{ end }}
+							{{ else }}
+								{{ with .Params.images }}
+								{{ partial "micro/image" (dict "filename" (index . 0)) }}
+								{{ end }}
 							{{ end }}
 						</a>
 					</div>
